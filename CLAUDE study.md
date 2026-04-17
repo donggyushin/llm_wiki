@@ -145,7 +145,7 @@ skill-creator plugin 사용해서 원하는 스킬을 만들기.
 /agents 명령어로 생성하는게 가장 좋음. 
 
 ## Agent Teams
-
+![[스크린샷 2026-04-17 오후 6.32.40.png]]
 
 ## Hooks
 
