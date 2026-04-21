@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "STUDY/Advisor.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Advisor"
+              "title": "CLAUDE"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "41cf11f0f0971fc6",
   "lastOpenFiles": [
-    "Resources/스크린샷 2026-04-21 오후 2.46.42.png",
     "STUDY/Advisor.md",
+    "Resources/스크린샷 2026-04-21 오후 2.46.42.png",
     "Resources/스크린샷 2026-04-21 오후 2.55.27.png",
     "Resources/스크린샷 2026-04-21 오후 2.54.36.png",
     "Resources/스크린샷 2026-04-21 오후 2.47.50.png",

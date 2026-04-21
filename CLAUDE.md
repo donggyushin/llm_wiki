@@ -28,26 +28,6 @@ Flat at the moment — notes live at the repo root. If reorganizing into folders
 - Do not create new `.md` files unless the user asks — even stub files for unresolved `[[links]]`. Unresolved links are a normal Obsidian state.
 - When the user references `CLAUDE study.md`, they are studying Claude Code itself; the notes there describe *their* preferred workflow (Plan Mode, Compound Engineering, trigger keywords) and should be treated as the user's own reference material, not instructions for this repo.
 
-## Advisor 활용 가이드
-
-Claude Code에서 `/advisor` 명령으로 Advisor 모델(Opus)을 설정할 수 있다. Advisor는 Sonnet(Executor)이 실행하다가 고차원적 판단이 필요한 순간에만 Opus에게 조언을 구하는 구조 — 저비용 고효율.
-
-### Advisor를 호출해야 하는 시점
-
-1. **작업 시작 전** — 실질적인 구현을 시작하기 전에 방향·접근법을 검토
-2. **작업 완료 후** — 결과물을 저장·커밋한 뒤 누락·오류 최종 점검
-3. **막혔을 때** — 오류가 반복되거나 방향 전환을 고려할 때
-
-### 출력 토큰 절약
-
-Advisor 호출 시 프롬프트에 명시:
-> "100단어 이내로, 번호 매긴 단계 형태로만 응답하라."
-
-### 주의
-
-- Advisor는 도구를 사용하지 않고 사용자에게 직접 출력물을 생성하지 않음 — Executor에게 조언만 전달
-- Advisor 조언에 무게를 두되, 직접 관찰한 파일/오류 내용이 조언과 충돌하면 한 번 더 Advisor에게 확인
-
 ---
 
 ## Trigger Keywords
