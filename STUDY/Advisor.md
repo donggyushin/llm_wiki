@@ -44,7 +44,7 @@
 ## Claude Code에서 사용하는 법
 
 ```
-/advisor   →  Advisor 모델을 Opus로 설정
+/advisor   →  Advisor 모델을 Opus로 설정, 기본 모델은 Sonnet 4.6 설정
 ```
 
 ### 권장 사용 시점
