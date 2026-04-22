@@ -40,3 +40,42 @@
 - ⚠️ **Lint 후보 발견**: 이 vault 의 `CLAUDE.md` 가 ~250 줄 → [[context-as-king|LazyLoading]] 원칙에 저촉. 향후 분할·다이어트 제안.
 - 📌 **미처리**: 원 노트의 스크린샷 14 장(Compound Engineering, Hooks, Agent Teams, Git worktree 등). 텍스트 요약 없이 임베드만 연결 — 추후 OCR ingest 로 확충.
 - 후속 탐구 아이디어: [[git-worktree]], Compound Engineering 개념 페이지, Hooks 엔티티, `raw/Advisor.md`·`raw/Harness Engineering.md` ingest.
+
+## [2026-04-22] ingest | Advisor.md (계층형 모델 아키텍처)
+
+- 원본: `raw/Advisor.md` (저자: 사용자 본인, Anthropic 선언 기반)
+- 생성 페이지 (3):
+  - Source: [[advisor-pattern-note]]
+  - Concepts: [[advisor-pattern]], [[model-routing]]
+- 갱신 페이지 (2): [[sub-agents]] (Advisor 와의 대조 섹션), [[claude-code]] (`/advisor` 커맨드)
+- 핵심 주장: Executor(Sonnet) 가 주도하고 Advisor(Opus) 는 조언만 하는 Bottom-up 구조. Sonnet 단독 대비 성능 ↑, Opus 단독 대비 비용 ↓.
+- 핵심 인용 (Anthropic): *"정답은 더 큰 모델이 아니라 더 똑똑한 시스템 아키텍처다."*
+- 스크린샷 4 장 미해석 (이슈 #1 대상에 추가 예정)
+
+## [2026-04-22] ingest | Harness Engineering.md (AI 통제 엔지니어링)
+
+- 원본: `raw/Harness Engineering.md` (저자: 사용자 본인)
+- 생성 페이지 (3):
+  - Source: [[harness-engineering-note]]
+  - Concept: [[harness-engineering]]
+  - Entity: [[oh-my-claudecode]]
+- 갱신 페이지 (4): [[context-as-king]] (Harness 첫째 기둥 맥락), [[claude-code]] (Hooks 의 하네스 위치), [[wat-framework]] (Harness 와의 차이 섹션), [[llm-wiki-pattern]] (4 기둥 대응 테이블)
+- 핵심 주장: AI 를 더 똑똑하게(Agentic) 만드는 것과 별개로 **더 통제·규율**하는 Harness 층을 프로젝트에 쌓아야 한다. 4 기둥 — 기계가 읽는 컨텍스트 / 자동 교정 루프 / 도구 경계 / 피드백 루프.
+- 핵심 인용: *"AI 가 실수했을 때 프롬프트 말고 하네스를 고쳐라."*
+- **메타 발견**: 이 위키 시스템 자체가 Harness Engineering 의 지식관리 도메인 적용 사례로 재해석 가능. [[llm-wiki-pattern]] 페이지에 대응 테이블 추가.
+- [[oh-my-claudecode]] 는 이 vault 에서 **실제 사용 중**(`.omc/` 디렉터리 확인).
+- 스크린샷 7 장 미해석 (이슈 #1 확장 대상).
+
+## [2026-04-22] lint | 위키 전체 건강 검진 (20 페이지)
+
+- 검사 범위: sources/ 4, concepts/ 9, entities/ 7
+- 결과 요약:
+  - 고아 페이지 **0** (최소 4 inbound: [[memex]], [[model-routing]], [[oh-my-claudecode]])
+  - 오버사이즈 **0** (최대 113 줄, 800 임계 대비 여유)
+  - 모순·스테일 **0**
+  - Placeholder `[[page-name]]`·`[[slug]]`·`[[스크린샷 ....png]]` — 전부 인라인 코드 백틱 안, Obsidian 렌더링 안전
+- 수정 1 건: CLAUDE.md 스키마 드리프트 — "STUDY/ 기존 보존" 조항 삭제 (STUDY/ 는 이미 raw/ 로 이동됨)
+- 리포트 항목 (수정 없음):
+  - 누락 엔티티 후보: `[[dataview]]`, `[[marp]]`, `[[qmd]]` — 언급만 있고 페이지 없음. 필요 시 엔티티 승격
+  - CLAUDE.md = 179 줄 — [[context-as-king]] LazyLoading 관점에서 다이어트 추적 대상이나 현재 임계 내
+- 이슈 #1 확장 코멘트 추가 예정: Advisor(스크린샷 4장) + Harness(7장) 분 스크린샷 OCR 스코프 포함

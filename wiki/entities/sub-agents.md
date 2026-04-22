@@ -4,7 +4,7 @@ type: entity
 tags: [claude-code, feature, agent, parallel, context]
 created: 2026-04-22
 updated: 2026-04-22
-sources: [[claude-code-study-notes]]
+sources: [[claude-code-study-notes]], [[advisor-pattern-note]]
 ---
 
 # Sub-Agents
@@ -37,6 +37,19 @@ Claude Code 의 **독립 컨텍스트 에이전트**. 메인 세션의 컨텍스
 | 독립된 여러 검증 동시 실행 (보안·성능·스타일) | ✅ |
 | 작은 단일 작업 | ❌ (오버헤드) |
 | 메인의 현재 맥락과 강결합된 편집 | ❌ |
+
+## Advisor 패턴과의 대조 (중요)
+
+Sub-agent 는 **Top-down 오케스트레이션** (Opus 메인 → Sonnet 서브). 반면 [[advisor-pattern|Advisor]] 는 **Bottom-up** (Sonnet 실행 → Opus 조언만). 두 패턴은 대립이 아니라 **상호보완**:
+
+| 상황 | 선택 |
+|---|---|
+| 넓게 병렬 탐색 필요 | **Sub-Agent** |
+| 실행은 싸고 판단만 비싸야 | **[[advisor-pattern\|Advisor]]** |
+| 관리 부담 최소화 | Advisor (단일 API) |
+| 독립 컨텍스트 격리 | Sub-Agent |
+
+상세 비교 표는 [[advisor-pattern]] 참조.
 
 ## WAT 프레임워크 내 위치
 
