@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "llm-wiki.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "llm-wiki"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "41cf11f0f0971fc6",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "llm-wiki.md",
     "STUDY/Advisor.md",
     "Resources/스크린샷 2026-04-21 오후 2.46.42.png",
     "Resources/스크린샷 2026-04-21 오후 2.55.27.png",
@@ -200,7 +202,6 @@
     "Resources/스크린샷 2026-04-20 오후 5.30.10.png",
     "Resources/스크린샷 2026-04-20 오후 5.16.41.png",
     "Resources",
-    "CLAUDE.md",
     "환영합니다!.md",
     "create a link.md"
   ]
