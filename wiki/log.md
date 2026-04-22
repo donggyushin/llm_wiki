@@ -23,3 +23,15 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 생성 (Concepts): [[concepts/claude-md]], [[concepts/plan-mode]], [[concepts/context-engineering]], [[concepts/claude-skills]], [[concepts/subagents]], [[concepts/hooks]]
 - 갱신: `wiki/index.md` (1 → 8 페이지)
 - 메모: 핵심 6개 개념만 선별. 통합 데모 · WAT 프레임워크 · 음성입력 · worktree · `/loop` 등 세부 토픽은 소스 페이지에 요약만 유지 (필요 시 별도 페이지로 분리 가능)
+
+## [2026-04-22] ingest | 프롬프트 엔지니어링은 끝났습니다: 이제 '하네스'의 시대입니다
+- 소스: `raw/프롬프트 엔지니어링은 끝났습니다： 이제 '하네스'의 시대입니다.ko.vtt` (yt-dlp 한국어 자동자막)
+- 전처리: `raw/harness-engineering-era-transcript.md` (중복 제거, 558 라인)
+- 저자: 실벨 개발자 ([[sources/claude-code-2h-mastery]] 와 동일 채널)
+- 생성 (Source): [[sources/harness-engineering-era]]
+- 생성 (Concepts): [[concepts/harness-engineering]], [[concepts/agentic-engineering]], [[concepts/four-axes-ai-development]]
+- 생성 (Entities): [[entities/martin-fowler]], [[entities/silbel-developer]]
+- 갱신 (Concepts): [[concepts/context-engineering]] (4축 중 2번째 축 맥락 추가), [[concepts/claude-md]] (하네스 1기둥 연결), [[concepts/hooks]] (하네스 2기둥 메커니즘), [[concepts/subagents]] (Worker Isolation 패턴)
+- 갱신 (Source): [[sources/claude-code-2h-mastery]] (동일 저자 교차참조)
+- 갱신: `wiki/index.md` (8 → 14 페이지)
+- 미해결: [[entities/martin-fowler]] 의 "harness" · "garbage collection" 용어 귀속 1차 출처 미확인 (영상 저자의 주장에 의존), OpenAI 2026-02 블로그 URL 미제공 — 추후 lint 시 확인 플래그

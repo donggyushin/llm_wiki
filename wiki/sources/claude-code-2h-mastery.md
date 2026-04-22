@@ -109,6 +109,11 @@ Claude Code 를 **에이전틱 엔지니어링 플랫폼**으로 다루는 실�
 - [[concepts/subagents]]
 - [[concepts/hooks]]
 
+## 동일 저자의 다른 소스
+
+- [[sources/harness-engineering-era]] — 같은 채널의 후속 영상. 이 영상에서 등장한 "세컨드 브레인", "에이전틱 엔지니어" 의 상위 프레임을 정리 → [[concepts/four-axes-ai-development]]
+- 저자 페이지: [[entities/silbel-developer]]
+
 ## 출처
 
 - 원본 영상: https://www.youtube.com/watch?v=vxEvo2BLM6A

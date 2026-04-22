@@ -4,8 +4,8 @@ type: concept
 tags: [claude-code, context, configuration]
 created: 2026-04-22
 updated: 2026-04-22
-sources: [claude-code-2h-mastery]
-aliases: ["CLAUDE.md", "클로드 MD", "프로젝트 설정 파일"]
+sources: [claude-code-2h-mastery, harness-engineering-era]
+aliases: ["CLAUDE.md", "클로드 MD", "프로젝트 설정 파일", "AGENTS.md"]
 ---
 
 # CLAUDE.md
@@ -95,8 +95,13 @@ CLAUDE.md 안에 워크플로우를 키워드로 등록 가능:
 - 개인 API 키 제거
 - 로컬 전용 경로 제거
 
+## 하네스 엔지니어링 관점
+
+`CLAUDE.md` 는 [[concepts/harness-engineering|Harness Engineering]] 의 **1번째 기둥 (Context Files)** 의 실체. 사람이 읽는 문서가 아니라 **AI 가 작업 시작 시 먼저 읽는 런타임 설정 파일** — 행동 제약으로 인식된다. 같은 역할의 파일: `AGENTS.md` (OpenAI 계열), `.cursorrules` (Cursor). OpenAI 가 3명으로 제품을 배포한 사례에서도 `agents.md` 가 핵심이었다.
+
 ## 관련 페이지
 
+- [[concepts/harness-engineering]] — 1번째 기둥 실체
 - [[concepts/context-engineering]] — lazy loading, 세컨드 브레인, 세션 위생
 - [[concepts/plan-mode]] — Plan 모드에서 CLAUDE.md 의 영향
 - [[concepts/claude-skills]] — Skills 와의 역할 분담
@@ -105,3 +110,4 @@ CLAUDE.md 안에 워크플로우를 키워드로 등록 가능:
 ## 출처
 
 - [[sources/claude-code-2h-mastery]] — 입문편 전반, 실전편 "컨텍스트 관리" 섹션
+- [[sources/harness-engineering-era]] — Context Files 기둥으로의 재해석

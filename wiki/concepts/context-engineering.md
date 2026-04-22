@@ -4,7 +4,7 @@ type: concept
 tags: [claude-code, context, token-optimization, workflow]
 created: 2026-04-22
 updated: 2026-04-22
-sources: [claude-code-2h-mastery]
+sources: [claude-code-2h-mastery, harness-engineering-era]
 aliases: ["컨텍스트 엔지니어링", "context engineering", "lazy loading", "세컨드 브레인"]
 ---
 
@@ -13,6 +13,9 @@ aliases: ["컨텍스트 엔지니어링", "context engineering", "lazy loading",
 ## 핵심 요약
 
 Claude Code 에서 **답변 품질은 컨텍스트 관리가 결정한다**. 200k 토큰 윈도우는 실제 작업에선 금방 찬다. 핵심 기법 네 가지: **(1) Lazy loading** — 필요할 때만 로드, **(2) 세컨드 브레인** — 누적 지식 재사용, **(3) MCP 다이어트** — 도구 설명도 토큰, **(4) 세션 위생** — 한 세션 한 피처. 공통 원칙: **신선한 컨텍스트 > 부풀어진 컨텍스트**.
+
+> [!note] 상위 프레임 위치
+> Context Engineering 은 [[concepts/four-axes-ai-development|AI 개발 4축]] 중 **2번째 축**. 위로는 [[concepts/harness-engineering|Harness]] · [[concepts/agentic-engineering|Agentic]] 이 쌓인다. 이 페이지가 다루는 기법은 **정보를 잘 주는 기술** — 정보를 다 줘도 AI 가 엉뚱한 행동을 하는 영역 (규칙·울타리 문제) 은 하네스의 몫.
 
 ## 1) Lazy Loading
 
@@ -155,6 +158,8 @@ Claude 는 이 다이어그램만 읽고 전체 구조 파악. 매번 말로 설
 
 ## 관련 페이지
 
+- [[concepts/four-axes-ai-development]] — 4축 상위 프레임에서의 위치
+- [[concepts/harness-engineering]] — 정보의 층을 넘어서는 규칙·울타리 층
 - [[concepts/claude-md]] — lazy loading 의 실무 적용
 - [[concepts/plan-mode]] — fresh context 로 구현 진입
 - [[concepts/claude-skills]] — MCP 대체 수단
@@ -164,3 +169,4 @@ Claude 는 이 다이어그램만 읽고 전체 구조 파악. 매번 말로 설
 ## 출처
 
 - [[sources/claude-code-2h-mastery]] — 실전편 "컨텍스트 관리" 섹션 전체
+- [[sources/harness-engineering-era]] — 4축 프레임 중 2번째 축으로의 재위치

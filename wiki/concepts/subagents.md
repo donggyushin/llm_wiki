@@ -4,8 +4,8 @@ type: concept
 tags: [claude-code, agents, parallel, context]
 created: 2026-04-22
 updated: 2026-04-22
-sources: [claude-code-2h-mastery]
-aliases: ["서브에이전트", "Subagent", "Sub-agent", "Agent Teams"]
+sources: [claude-code-2h-mastery, harness-engineering-era]
+aliases: ["서브에이전트", "Subagent", "Sub-agent", "Agent Teams", "Worker Isolation"]
 ---
 
 # Subagents
@@ -127,8 +127,14 @@ Claude Code 가 내부적으로 활용하는 서브에이전트들:
 
 결론: **안 쓸 때 = Skills 승, 실행 중 = Subagents 승**. 상황에 맞게 조합.
 
+## 하네스 시스템 연결 — Worker Isolation
+
+[[concepts/harness-engineering|Harness Engineering]] 시스템 4부품 중 **Worker Isolation** 이 바로 서브에이전트 활용 패턴. 핵심 원칙: **코드를 쓰는 AI 와 코드를 검토하는 AI 를 분리**. 같은 인스턴스가 쓰고 검토하면 자기 실수를 못 잡는다. Subagent 의 격리 패턴이 하네스 루프의 **리뷰어 역할**을 담당.
+
 ## 관련 페이지
 
+- [[concepts/harness-engineering]] — Worker Isolation 이 시스템 4부품의 하나
+- [[concepts/agentic-engineering]] — 멀티에이전트 조율의 실체
 - [[concepts/context-engineering]] — 컨텍스트 격리의 토큰 경제학
 - [[concepts/plan-mode]] — Plan 은 메인에서, 구현은 서브에이전트 병렬
 - [[concepts/claude-skills]] — 요청 기반 자동화와의 역할 차이
@@ -137,3 +143,4 @@ Claude Code 가 내부적으로 활용하는 서브에이전트들:
 ## 출처
 
 - [[sources/claude-code-2h-mastery]] — 심화편 "서브 에이전트" 섹션, 통합 데모
+- [[sources/harness-engineering-era]] — Worker Isolation 패턴의 이론적 근거
