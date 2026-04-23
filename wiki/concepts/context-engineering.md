@@ -3,8 +3,8 @@ title: "Context Engineering — 컨텍스트가 왕이다"
 type: concept
 tags: [claude-code, context, token-optimization, workflow]
 created: 2026-04-22
-updated: 2026-04-22
-sources: [claude-code-2h-mastery, harness-engineering-era]
+updated: 2026-04-23
+sources: [claude-code-2h-mastery, harness-engineering-era, jimcoding-claude-rules]
 aliases: ["컨텍스트 엔지니어링", "context engineering", "lazy loading", "세컨드 브레인"]
 ---
 
@@ -40,6 +40,15 @@ Claude 는 "DB 스키마 업데이트해줘" 요청을 받으면 `db-schema.md` 
 ### 폴더별 `CLAUDE.md` 분할
 
 `apps/api/CLAUDE.md`, `apps/web/CLAUDE.md` 처럼 도메인별로 쪼개면 작업 경로에 따라 해당 파일만 로드됨 → [[concepts/claude-md#분할]].
+
+### `.claude/rules/` 조건부 로딩
+
+폴더 분할이 *도메인 단위* 라면, `.claude/rules/*.md` 는 *파일 타입 단위* 의 lazy loading. 각 파일 frontmatter 에 glob 패턴을 지정하면 Claude 가 해당 패턴의 파일을 건드릴 때만 규칙을 로드한다. 오픈소스 사례:
+
+- **Trigger.dev** — `.claude/rules/database-safety.md` 가 DB 파일 작업 시만 로드
+- **CockroachDB** — 모든 `.go` 파일에 PII 로그 마스킹 규칙 자동 강제
+
+자세히 → [[concepts/conditional-rule-loading]].
 
 ## 2) 세컨드 브레인
 
@@ -161,6 +170,7 @@ Claude 는 이 다이어그램만 읽고 전체 구조 파악. 매번 말로 설
 - [[concepts/four-axes-ai-development]] — 4축 상위 프레임에서의 위치
 - [[concepts/harness-engineering]] — 정보의 층을 넘어서는 규칙·울타리 층
 - [[concepts/claude-md]] — lazy loading 의 실무 적용
+- [[concepts/conditional-rule-loading]] — Lazy Loading 의 파일 타입 기반 구현
 - [[concepts/plan-mode]] — fresh context 로 구현 진입
 - [[concepts/claude-skills]] — MCP 대체 수단
 - [[concepts/subagents]] — 컨텍스트 격리로 오염 방지

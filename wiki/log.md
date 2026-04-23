@@ -66,3 +66,16 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 갱신: `wiki/index.md` (22 → 23 페이지)
 - 잔여 broken link: 2건 ([[concepts/memex]], [[entities/andrej-karpathy]]) — 후속 ingest 대기
 - 출처: 씨앗은 [[concepts/llm-wiki-pattern]] 대비 서술 + 일반 RAG 문헌. 특정 논문 raw ingest 는 미수행 → `[!question]` 블록으로 표시
+
+## [2026-04-23] ingest | 클로드 코드 대규모 프로젝트 컨텍스트 엔지니어링 - .claude/rules 규칙 쪼개기
+- 소스: `raw/클로드 코드 대규모 프로젝트 컨텍스트 엔지니어링 - .claude⧸rules 규칙 쪼개기 [FBv8hK_DtJ8].ko.vtt` (yt-dlp 자동자막)
+- 전처리: `raw/jimcoding-claude-rules-transcript.md` (중복 제거, 298 라인)
+- 저자: 짐코딩 (https://www.youtube.com/channel/UCZ30aWiMw5C8mGcESlAGQbA)
+- URL: https://youtu.be/FBv8hK_DtJ8 (2026-03-26 업로드, 11분 25초)
+- 생성 (Source): [[sources/jimcoding-claude-rules]]
+- 생성 (Concept): [[concepts/conditional-rule-loading]] — `.claude/rules/*.md` + frontmatter glob 패턴으로 파일 타입별 자동 로드. Lazy Loading 의 구체 구현.
+- 생성 (Entity): [[entities/jimcoding]]
+- 갱신 (Concepts): [[concepts/claude-md]] (비대화 실패 모드 + rules 디렉터리 섹션 추가), [[concepts/context-engineering]] (lazy loading 에 `.claude/rules` 사례 추가), [[concepts/claude-skills]] (관련 페이지에 conditional-rule-loading 대비 링크)
+- 갱신: `wiki/index.md` (23 → 26 페이지)
+- 도메인: Claude Code 실전 메모리 관리 — 기존 AI·하네스 클러스터 확장. 오픈소스 레퍼런스 (Trigger.dev, CockroachDB) 는 1회 언급으로 entity 생성 보류.
+- 미해결: Reddit 47K 단어 원글 URL · Anthropic 공식 frontmatter 필드명 (`globs`/`applyTo` 등) — 두 건 모두 `[!question]` 블록으로 기록. 공식 docs 교차 확인 시 보강.

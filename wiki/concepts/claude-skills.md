@@ -3,7 +3,7 @@ title: "Claude Skills — AI 업무 매뉴얼"
 type: concept
 tags: [claude-code, skills, automation]
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-04-23
 sources: [claude-code-2h-mastery]
 aliases: ["Skills", "스킬", "skill.md", "Agent Skills"]
 ---
@@ -144,6 +144,7 @@ Claude Code 내장 스킬. 예: `simplify` (코드 품질 자동 검토). 자주
 
 - [[concepts/context-engineering]] — 2단계 로딩의 토큰 절약 원리
 - [[concepts/claude-md]] — 항상 로드되는 규칙의 영역
+- [[concepts/conditional-rule-loading]] — 다른 트리거 방식 (파일 패턴 매칭 vs description 의미 해석)
 - [[concepts/subagents]] — 실행 중 격리가 목적일 때
 - [[concepts/hooks]] — 이벤트 기반 자동화 (Skills 는 요청 기반)
 

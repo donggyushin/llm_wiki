@@ -3,8 +3,8 @@ title: "CLAUDE.md — 프로젝트 컨텍스트 허브"
 type: concept
 tags: [claude-code, context, configuration]
 created: 2026-04-22
-updated: 2026-04-22
-sources: [claude-code-2h-mastery, harness-engineering-era]
+updated: 2026-04-23
+sources: [claude-code-2h-mastery, harness-engineering-era, jimcoding-claude-rules]
 aliases: ["CLAUDE.md", "클로드 MD", "프로젝트 설정 파일", "AGENTS.md"]
 ---
 
@@ -49,6 +49,13 @@ aliases: ["CLAUDE.md", "클로드 MD", "프로젝트 설정 파일", "AGENTS.md"
 ```
 
 Claude 는 작업 경로에 따라 해당 폴더의 `CLAUDE.md` 만 읽으므로 루트 비대화를 막는다.
+
+### 파일 타입별 조건부 로딩
+
+`.claude/rules/*.md` + frontmatter **glob 조건**으로 파일 패턴별 자동 로드도 가능. 폴더 분할이 *도메인 단위* 분리라면, 이 패턴은 *파일 타입 단위* 분리. 둘을 함께 쓰면 토큰 절감 극대화 → [[concepts/conditional-rule-loading]].
+
+> [!note] 실패 모드 — 비대화 주의
+> 저자 [[entities/jimcoding|짐코딩]] 보고 사례: 모노레포 `CLAUDE.md` 가 47,000 단어까지 비대 → Claude 가 느려지고 규칙 무시 시작 → 조건부 로딩으로 재구성 후 루트 메모리 80% 감소.
 
 ### 참조 기반 (lazy loading)
 
@@ -103,6 +110,7 @@ CLAUDE.md 안에 워크플로우를 키워드로 등록 가능:
 
 - [[concepts/harness-engineering]] — 1번째 기둥 실체
 - [[concepts/context-engineering]] — lazy loading, 세컨드 브레인, 세션 위생
+- [[concepts/conditional-rule-loading]] — `.claude/rules/*.md` + glob 로 파일 타입별 자동 로드
 - [[concepts/plan-mode]] — Plan 모드에서 CLAUDE.md 의 영향
 - [[concepts/claude-skills]] — Skills 와의 역할 분담
 - [[concepts/llm-wiki-pattern]] — 누적형 지식 관리 관점
@@ -111,3 +119,4 @@ CLAUDE.md 안에 워크플로우를 키워드로 등록 가능:
 
 - [[sources/claude-code-2h-mastery]] — 입문편 전반, 실전편 "컨텍스트 관리" 섹션
 - [[sources/harness-engineering-era]] — Context Files 기둥으로의 재해석
+- [[sources/jimcoding-claude-rules]] — 비대화 실패 모드 + `.claude/rules` 조건부 로딩 사례
