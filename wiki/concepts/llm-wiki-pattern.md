@@ -3,7 +3,7 @@ title: "LLM Wiki Pattern"
 type: concept
 tags: [knowledge-base, llm, rag, second-brain, karpathy]
 created: 2026-04-22
-updated: 2026-04-22
+updated: 2026-04-23
 sources: []
 aliases: ["Karpathy Wiki", "지속형 LLM 위키", "Persistent LLM Wiki"]
 ---
@@ -101,7 +101,10 @@ LLM Wiki는 그 빈자리를 LLM으로 채운 셈이다.
 
 ## 관련 페이지
 
-_아직 없음. 추가 소스 ingest 시 [[concepts/rag]], [[concepts/memex]], [[entities/andrej-karpathy]] 등이 생길 예정._
+- [[concepts/rag]] — 대비되는 검색형 패턴 (매 질의마다 재발견 vs 해석 누적)
+- [[concepts/context-engineering]] — 위키도 lazy loading 컨텍스트의 한 형태
+
+_[[concepts/memex]], [[entities/andrej-karpathy]] 는 관련 소스 ingest 시 생성 예정._
 
 ## 출처
 

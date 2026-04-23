@@ -58,3 +58,11 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 리포트: [[syntheses/lint-2026-04-23]]
 - 평가: 신규 ingest 6페이지 orphan 0 / broken 신규 0 / 모순 0 — 새 도메인 자체 클러스터 내부 연결성 양호.
 - 최우선 조치: 이월 broken 3건 중 [[concepts/rag]] 우선 생성 권고. 나머지 2건(memex, andrej-karpathy) 후속 ingest 시 자연 생성 대기.
+
+## [2026-04-23] quick-add | concepts/rag 페이지 생성
+- 트리거: lint-2026-04-22 · lint-2026-04-23 공통 P0 권고 (broken link 해소 + llm-wiki-pattern 문맥 보강)
+- 생성: [[concepts/rag]] — 파이프라인 · 구성요소 · 변형(GraphRAG/HyDE/Self-RAG/Agentic RAG) · LLM Wiki 대비표
+- 갱신: [[concepts/llm-wiki-pattern]] (관련 페이지 섹션 활성 링크로 전환, updated 2026-04-23)
+- 갱신: `wiki/index.md` (22 → 23 페이지)
+- 잔여 broken link: 2건 ([[concepts/memex]], [[entities/andrej-karpathy]]) — 후속 ingest 대기
+- 출처: 씨앗은 [[concepts/llm-wiki-pattern]] 대비 서술 + 일반 RAG 문헌. 특정 논문 raw ingest 는 미수행 → `[!question]` 블록으로 표시
