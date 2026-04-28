@@ -124,3 +124,15 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 갱신: `wiki/index.md` (32 → 43 페이지, +6 concepts +4 entities +1 source)
 - 도메인: AI 코딩의 *펀더멘털 회귀* — 기존 클러스터(claude-skills, plan-mode, harness, context, reward-hacking) 와 강하게 결합. *Code is not cheap* 테제가 위키 내 다른 *반-경량화* 신호(vanilla 우선, 플랜 적극 편집, reward-hacking 경고) 와 같은 결로 정렬됨.
 - 미해결: 인용된 책 3권의 1차 페이지 (Ousterhout *Philosophy of Software Design* 의 deep modules 챕터, Pragmatic Programmer 의 software entropy 챕터, Brooks *Design of Design* 의 design concept 챕터) — 영상 화면에 책 표지만 노출, 페이지 번호 미상. `mattpocock/skills` 리포지토리 URL 정확 확인 필요. AI Engineer 컨퍼런스 공식 발표 페이지 URL 미확보. lint 시 교차 확인.
+
+## [2026-04-28] ingest | Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6)
+- 소스: `raw/Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6) [cSkoaCCmq0w].en.vtt` (yt-dlp 영어 자동자막, 한국어 sub 부재)
+- 전처리: `raw/cskoa-transcript.txt` (중복 제거, 723 라인 / 27,753 자)
+- URL: https://www.youtube.com/watch?v=cSkoaCCmq0w (약 22분, "Hello legends" 인사 영어권 채널)
+- 저자: 미확정 — 자막 메타에 채널명 미노출. entity 미생성, lint 시 후속 확인.
+- 생성 (Source): [[sources/claude-code-agent-teams-opus46]]
+- 생성 (Concept): [[concepts/agent-teams]] — Opus 4.6 멀티세션 모드. 3-mode 분류 + team leader + tmux split-pane + memory 격리 + race condition + 모델 혼용 비용 통제 + skill 부트스트랩 + shutdown idle 유지 + cost 모니터링 + 안티패턴.
+- 갱신 (Concepts): [[concepts/subagents]] (alias 에서 "Agent Teams" 제거 + 자매 모드 비교 표 + 출처 추가), [[concepts/claude-skills]] (생성법 3번 *한 번 굴리고 추출* 부트스트랩 패턴 추가), [[concepts/context-engineering]] (9번 섹션 agent-team 사전 MD 패키징 의무 추가, 기존 8번 Mermaid → 10번으로 시프트)
+- 갱신: `wiki/index.md` (48 → 50 페이지, +1 concept +1 source)
+- 도메인: Claude Code Opus 4.6 신기능 — 기존 sub-agent / context-engineering / claude-skills / agentic-engineering 클러스터 직접 확장. 영상 본인이 *"진짜 핵심 기능"* 으로 강조한 모드를 wiki 내 첫 시야 정합 (sub-agent 의 Agent Teams 절을 분리 페이지로 승격).
+- 미해결: 채널/저자 정확 식별 필요 (entity 미생성), Anthropic Opus 4.6 Agent Teams 공식 docs URL 미확보 (영상 내 언급), `/cost` 멀티에이전트 duration 계산 로직 (영상 본인도 의문 표시), `--dangerously-skip-permissions` 보안 권고 vs 영상 데모 갭. 후속 lint 시 교차 확인.

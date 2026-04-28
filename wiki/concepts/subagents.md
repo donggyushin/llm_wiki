@@ -3,9 +3,9 @@ title: "Subagents — 격리된 컨텍스트 워커"
 type: concept
 tags: [claude-code, agents, parallel, context]
 created: 2026-04-22
-updated: 2026-04-22
-sources: [claude-code-2h-mastery, harness-engineering-era]
-aliases: ["서브에이전트", "Subagent", "Sub-agent", "Agent Teams", "Worker Isolation"]
+updated: 2026-04-28
+sources: [claude-code-2h-mastery, harness-engineering-era, claude-code-agent-teams-opus46]
+aliases: ["서브에이전트", "Subagent", "Sub-agent", "Worker Isolation"]
 ---
 
 # Subagents
@@ -105,17 +105,18 @@ Claude Code 가 내부적으로 활용하는 서브에이전트들:
 - ❌ **결과 검증 없이 그대로 사용** — 반환값은 반드시 메인에서 검증
 - ❌ **서브에이전트끼리 직접 통신 시도** — 메인이 코디네이터 역할. (Agent Teams 가 이를 개선)
 
-## Agent Teams (신기능)
+## Agent Teams — 분리된 자매 모드
 
-서브에이전트끼리 **직접 메시지 교환** 가능. 실제 개발팀처럼:
+Opus 4.6 이후 sub-agent 와는 별개의 **agent-team** 모드가 등장. 가장 큰 차이는 *세션 수*: sub-agent 는 main 1개 + 단발성 위임이지만 agent-team 은 **각 agent 가 자기 세션** 을 가지고 tmux split-pane 에서 사용자가 개별 대화한다. 자세한 분류 표·setup·skill 부트스트랩 패턴은 [[concepts/agent-teams]] 페이지로 분리.
 
-- 프론트 담당
-- 백엔드 담당
-- 테스트 담당
+| | sub-agent | agent-team |
+|---|---|---|
+| 세션 | main 1개 + 위임 | N 병렬 + team leader |
+| UX | 결과 요약만 받음 | 도중 개별 agent 와 직접 대화 가능 |
+| 사용자 비유 | 한 명을 *3층 5호* 출동 | 빌딩 전체 *보안 인력 배치* |
+| 적합 | 단발성 추가 기능, 격리 탐색 | 다각도 리서치, 대규모 리팩토링 |
 
-각자 독립 컨텍스트를 유지하면서 필요할 때 상호 통신. 리더 에이전트가 작업 조율.
-
-> 저자가 "에이전틱 엔지니어링의 진짜 중요한 기능" 이라고 평가.
+> 영상 저자([[sources/claude-code-agent-teams-opus46]])가 "Opus 4.6 의 진짜 핵심 기능" 으로 강조. 단 default 모드 컨텍스트가 자동 전달되지 않으므로 사전 MD 파일 패키징 의무.
 
 ## Skills · MCP · Subagents 비교
 
@@ -133,6 +134,7 @@ Claude Code 가 내부적으로 활용하는 서브에이전트들:
 
 ## 관련 페이지
 
+- [[concepts/agent-teams]] — Opus 4.6 의 자매 모드 (세션 N개 병렬)
 - [[concepts/harness-engineering]] — Worker Isolation 이 시스템 4부품의 하나
 - [[concepts/agentic-engineering]] — 멀티에이전트 조율의 실체
 - [[concepts/context-engineering]] — 컨텍스트 격리의 토큰 경제학
@@ -144,3 +146,4 @@ Claude Code 가 내부적으로 활용하는 서브에이전트들:
 
 - [[sources/claude-code-2h-mastery]] — 심화편 "서브 에이전트" 섹션, 통합 데모
 - [[sources/harness-engineering-era]] — Worker Isolation 패턴의 이론적 근거
+- [[sources/claude-code-agent-teams-opus46]] — agent-team 모드와의 정합 비교

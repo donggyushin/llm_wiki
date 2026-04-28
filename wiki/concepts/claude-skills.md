@@ -4,7 +4,7 @@ type: concept
 tags: [claude-code, skills, automation]
 created: 2026-04-22
 updated: 2026-04-28
-sources: [claude-code-2h-mastery, jay-choi-9-tips, matt-pocock-software-fundamentals]
+sources: [claude-code-2h-mastery, jay-choi-9-tips, matt-pocock-software-fundamentals, claude-code-agent-teams-opus46]
 aliases: ["Skills", "스킬", "skill.md", "Agent Skills"]
 ---
 
@@ -123,6 +123,20 @@ Claude 플러그인 마켓플레이스에서 `skill-creator` 설치 후:
 
 → Skill Creator 가 자동 트리거되어 `skill.md` 생성. 처음부터 완벽할 필요 없이 **점진적으로 정교화**.
 
+### 3) 부트스트랩 — *한 번 굴리고 추출* ([[sources/claude-code-agent-teams-opus46]])
+
+복잡한 워크플로 (특히 [[concepts/agent-teams|agent team]] 사이클) 는 처음부터 `skill.md` 를 *상상으로* 쓰면 거의 빗나간다. 가장 정확한 경로:
+
+```
+1. main 세션에서 워크플로를 한 번 실행 (수동 prompt 로 끝까지 굴린다)
+2. 같은 세션에서: "방금 한 과정을 skill 로 만들어줘. 변수는 topic, model."
+3. Claude 가 .claude/skills/<name>/skill.md 자동 생성 (실제 한 일을 압축)
+4. 새 Claude 세션에서 /<skill-name> 으로 호출 — 같은 세션에선 슬래시 메뉴에 안 뜬다
+5. 프로세스 변경 시: 그 skill 을 다시 쓴 뒤 "이 skill 업데이트해줘" 메타 프롬프트
+```
+
+핵심: 위 ②번이 *실행 trace 를 보고 추출* 하는 작업이라 **재현률이 높다**. 빈 `skill.md` 부터 작성하면 빠진 단계를 사후에 디버깅하게 된다.
+
 ## 채택 순서 — 남의 스킬 먼저
 
 [[sources/jay-choi-9-tips]] 의 권고 순서:
@@ -186,3 +200,4 @@ Claude Code 내장 스킬. 예: `simplify` (코드 품질 자동 검토). 자주
 - [[sources/claude-code-2h-mastery]] — 심화편 "스킬" 섹션
 - [[sources/jay-choi-9-tips]] — 채택 순서 (남의 스킬 먼저) + 명시적 호출 원칙
 - [[sources/matt-pocock-software-fundamentals]] — `mattpocock/skills` 사례 + 13K stars 시그널
+- [[sources/claude-code-agent-teams-opus46]] — *한 번 굴리고 추출* 부트스트랩 패턴 + 변수화
