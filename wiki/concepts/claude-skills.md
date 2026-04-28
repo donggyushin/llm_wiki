@@ -3,8 +3,8 @@ title: "Claude Skills — AI 업무 매뉴얼"
 type: concept
 tags: [claude-code, skills, automation]
 created: 2026-04-22
-updated: 2026-04-25
-sources: [claude-code-2h-mastery, jay-choi-9-tips]
+updated: 2026-04-28
+sources: [claude-code-2h-mastery, jay-choi-9-tips, matt-pocock-software-fundamentals]
 aliases: ["Skills", "스킬", "skill.md", "Agent Skills"]
 ---
 
@@ -149,6 +149,22 @@ Claude 플러그인 마켓플레이스에서 `skill-creator` 설치 후:
 
 Claude Code 내장 스킬. 예: `simplify` (코드 품질 자동 검토). 자주 쓰는 기능은 이미 제공됨.
 
+## 사례 — `mattpocock/skills` ([[entities/matt-pocock]])
+
+펀더멘털을 *스킬 형태로 인스턴스화* 한 대표 사례. AI Engineer 발표 [[sources/matt-pocock-software-fundamentals]] 에서 공개:
+
+| 스킬 | 무엇을 강제 | 펀더멘털 페이지 |
+|---|---|---|
+| **grill me** | 합의 도달 전까지 AI 가 사용자에게 40~100 질문 | [[concepts/design-concept]] |
+| **ubiquitous language** | 코드베이스 스캔 → 도메인 용어 마크다운 표 자동 생성 | [[concepts/ubiquitous-language]] |
+| **improve codebase architecture** | 얕은 모듈 → 깊은 모듈 점진 변환 | [[concepts/deep-modules]] |
+
+`grill me` 는 두 줄짜리 description 인데 **GitHub 13K stars**. 시사점:
+
+- 좋은 스킬은 *분량* 이 아니라 *어떤 펀더멘털을 강제하는가* 로 가치가 결정된다.
+- *남의 스킬 먼저* 원칙 (위 섹션 참조) 의 가장 강한 증거 — 직접 만들기 전에 13K stars 짜리부터 가져다 써 본다.
+- Pocock 본인은 *plan mode 보다 grill me 가 낫다* 고 도발 — 기본 plan mode 는 자산을 너무 빨리 만들지만, grill me 는 *공유 design concept* 합의를 먼저. → [[concepts/plan-mode]] 의 한계 보강.
+
 ## 왜 MCP 가 아닌 Skills 를 써야 하나
 
 간단한 기능 래핑이라면 MCP 보다 **로컬 스크립트를 스킬로 감싸는** 쪽이 훨씬 가볍다. MCP 는 연결만 해도 전체 도구 설명이 매 세션 로드되지만, 스킬은 description 만 상시 → [[concepts/context-engineering#3-mcp-다이어트]].
@@ -161,9 +177,12 @@ Claude Code 내장 스킬. 예: `simplify` (코드 품질 자동 검토). 자주
 - [[concepts/conditional-rule-loading]] — 다른 트리거 방식 (파일 패턴 매칭 vs description 의미 해석)
 - [[concepts/subagents]] — 실행 중 격리가 목적일 때
 - [[concepts/hooks]] — 이벤트 기반 자동화 (Skills 는 요청 기반)
+- [[concepts/design-concept]] · [[concepts/ubiquitous-language]] · [[concepts/deep-modules]] — `mattpocock/skills` 가 인스턴스화하는 펀더멘털
 - [[entities/boris-cherny]] — vanilla 우선 원칙
+- [[entities/matt-pocock]] — `mattpocock/skills` 저자
 
 ## 출처
 
 - [[sources/claude-code-2h-mastery]] — 심화편 "스킬" 섹션
 - [[sources/jay-choi-9-tips]] — 채택 순서 (남의 스킬 먼저) + 명시적 호출 원칙
+- [[sources/matt-pocock-software-fundamentals]] — `mattpocock/skills` 사례 + 13K stars 시그널

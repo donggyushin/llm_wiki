@@ -3,7 +3,7 @@ title: "LLM Wiki Pattern"
 type: concept
 tags: [knowledge-base, llm, rag, second-brain, karpathy]
 created: 2026-04-22
-updated: 2026-04-23
+updated: 2026-04-28
 sources: []
 aliases: ["Karpathy Wiki", "지속형 LLM 위키", "Persistent LLM Wiki"]
 ---

@@ -93,9 +93,11 @@ Reward hacking 은 "지표가 사람보다 약할 때" 발생. 차단 책임은 
 
 ## 관련 페이지
 
+- [[concepts/tdd]] — 1차 방어선 (그러나 테스트 자체도 사람이 봐야 한다)
 - [[concepts/harness-engineering]] — 검증 루프와 Tool Boundaries 의 상위 프레임
 - [[concepts/subagents]] — Worker Isolation 으로 방어
 - [[concepts/fresh-context-principle]] — 같은 세션에서 구현+검증을 합치지 말라는 동기
+- [[concepts/deep-modules]] — 단순 인터페이스가 사람의 테스트 리뷰를 가능하게 한다
 - [[sources/jay-choi-9-tips]] — 1차 근거
 
 ## 출처

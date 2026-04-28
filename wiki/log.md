@@ -91,3 +91,36 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 갱신: `wiki/index.md` (26 → 32 페이지)
 - 도메인: Claude Code 실전 사용 — 기존 클러스터(claude-md, plan-mode, skills, context-engineering, harness) 깊이 보강. 첫 인디 개발자 회고 시점 소스.
 - 미해결: 보리스 X 게시 원문 URL · Anthropic 공식 *"AI 자율 ≠ 인간 검증 패키지"* 인용 1차 출처 · Claude Code 팀 *"리와인드 = 단 하나의 습관"* 발언 1차 출처 · *"디스텍 스퍼파"* 추정 스킬 리포지토리 정확 명칭 — 4건 모두 `[!question]` 블록 기록. 후속 lint 시 교차 확인.
+
+## [2026-04-28] lint
+- orphan 0 · stale 0 · 모순 0 (본문) · broken 11 ref / 2종(이월 그대로) · missing 4 P1 + 3 P2 · oversized 0 · gap 4 신규 + 22 이월
+- 리포트: [[syntheses/lint-2026-04-28]]
+- 평가: Pocock ingest 신규 11페이지 전부 inbound ≥3 (최고 41) — orphan / 모순 / oversized 0 유지. 위키 32 → 43 (+34%) 에도 건강 지표 후퇴 없음.
+- 최우선 조치 (P1):
+  1. `entities/andrej-karpathy` quick-add (broken 7 ref 해소)
+  2. `concepts/memex` quick-add (broken 4 ref 해소)
+  3. `concepts/tdd` quick-add (Pocock + Kent Beck + reward-hacking 방어선 묶음, 5곳 인용)
+  4. `concepts/domain-driven-design` quick-add (ubiquitous-language 상위 우산 분리)
+- P2 4건 웹 검색 일괄: OpenAI 블로그 URL · Martin Fowler 1차 · Reddit 47K · Anthropic frontmatter 필드명
+
+## [2026-04-28] quick-add | P1 lint 권고 4건 일괄 처리
+- 트리거: [[syntheses/lint-2026-04-28]] P1 4건 즉시 처리 사용자 요청
+- 생성 (Entities): [[entities/andrej-karpathy]] (LLM Wiki 발화자 · Software 3.0 분류 · OpenAI/Tesla/Eureka 이력)
+- 생성 (Concepts): [[concepts/memex]] (Vannevar Bush 1945 *As We May Think*), [[concepts/tdd]] (Beck 원전 + AI 코딩 맥락의 두 새 역할), [[concepts/domain-driven-design]] (Evans 책 + ubiquitous-language / bounded-context 등 상위 우산)
+- 갱신 (백링크): [[concepts/ubiquitous-language]] (DDD 우산 링크), [[concepts/reward-hacking]] (TDD 1차 방어선 + deep-modules 링크), [[entities/kent-beck]] (TDD 페이지 링크), [[concepts/llm-wiki-pattern]] (updated 갱신 — 본문은 이미 memex/karpathy 인용 중이라 broken 자연 해소)
+- 갱신: `wiki/index.md` (44 → 48 페이지)
+- 효과: 이월 broken 2종 (`entities/andrej-karpathy` × 7 ref + `concepts/memex` × 4 ref = 11 ref) **전부 해소** — 6일 묵은 채무 청산. Missing P1 4건 → 0건.
+- 미해결: P3 출처 (Karpathy X 게시 정확 URL · Bush 원문 atlantic.com 아카이브 링크 · Beck *TDD by Example* 페이지 번호 · Evans *DDD* 책 페이지 번호) 모두 페이지 본문에 명시 — 후속 lint 시 보강.
+
+## [2026-04-28] ingest | "Software Fundamentals Matter More Than Ever" — Matt Pocock
+- 소스: `raw/＂Software Fundamentals Matter More Than Ever＂ — Matt Pocock [v4F1gFy-hqg].en.vtt` (yt-dlp 자동자막, 한국어 sub 부재 → 영어 사용)
+- 전처리: `raw/matt-pocock-software-fundamentals-transcript.md` (timestamp 제거, 17,802 문자)
+- 저자: Matt Pocock · AI Hero (aihero.dev) · TypeScript 교육자
+- URL: https://youtu.be/v4F1gFy-hqg (AI Engineer 컨퍼런스 발표, 18분 26초, 2026-04-23 업로드)
+- 생성 (Source): [[sources/matt-pocock-software-fundamentals]]
+- 생성 (Concepts): [[concepts/code-is-not-cheap]] (테제), [[concepts/specs-to-code-antipattern]] (반박 대상), [[concepts/software-entropy]] (Pragmatic Programmer 챕터), [[concepts/design-concept]] (Brooks), [[concepts/ubiquitous-language]] (DDD), [[concepts/deep-modules]] (Ousterhout)
+- 생성 (Entities): [[entities/matt-pocock]] (테제 발화자), [[entities/john-ousterhout]] (복잡성 + deep modules 원작), [[entities/frederick-brooks]] (design concept 원작), [[entities/kent-beck]] (invest in design every day)
+- 갱신 (Concepts): [[concepts/claude-skills]] (`mattpocock/skills` 사례 + 13K stars + grill me 두 줄), [[concepts/plan-mode]] (한계 — 자산 너무 빨리 생성, grill me 대안), [[concepts/harness-engineering]] (코드 레벨 하네스 = deep modules 섹션), [[concepts/context-engineering]] (7번 섹션 ubiquitous-language 어휘 정렬 축 추가)
+- 갱신: `wiki/index.md` (32 → 43 페이지, +6 concepts +4 entities +1 source)
+- 도메인: AI 코딩의 *펀더멘털 회귀* — 기존 클러스터(claude-skills, plan-mode, harness, context, reward-hacking) 와 강하게 결합. *Code is not cheap* 테제가 위키 내 다른 *반-경량화* 신호(vanilla 우선, 플랜 적극 편집, reward-hacking 경고) 와 같은 결로 정렬됨.
+- 미해결: 인용된 책 3권의 1차 페이지 (Ousterhout *Philosophy of Software Design* 의 deep modules 챕터, Pragmatic Programmer 의 software entropy 챕터, Brooks *Design of Design* 의 design concept 챕터) — 영상 화면에 책 표지만 노출, 페이지 번호 미상. `mattpocock/skills` 리포지토리 URL 정확 확인 필요. AI Engineer 컨퍼런스 공식 발표 페이지 URL 미확보. lint 시 교차 확인.
