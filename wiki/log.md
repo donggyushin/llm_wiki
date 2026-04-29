@@ -125,6 +125,17 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 도메인: AI 코딩의 *펀더멘털 회귀* — 기존 클러스터(claude-skills, plan-mode, harness, context, reward-hacking) 와 강하게 결합. *Code is not cheap* 테제가 위키 내 다른 *반-경량화* 신호(vanilla 우선, 플랜 적극 편집, reward-hacking 경고) 와 같은 결로 정렬됨.
 - 미해결: 인용된 책 3권의 1차 페이지 (Ousterhout *Philosophy of Software Design* 의 deep modules 챕터, Pragmatic Programmer 의 software entropy 챕터, Brooks *Design of Design* 의 design concept 챕터) — 영상 화면에 책 표지만 노출, 페이지 번호 미상. `mattpocock/skills` 리포지토리 URL 정확 확인 필요. AI Engineer 컨퍼런스 공식 발표 페이지 URL 미확보. lint 시 교차 확인.
 
+## [2026-04-29] ingest | 직장 글쓰기 자주 틀리는 표현 30 (본인 정리)
+- 소스: `raw/business-writing-30-mistakes-personal.md` (본인 정리, 2026-04-29)
+- 도메인: 한국어 비즈니스 커뮤니케이션 — **위키 첫 비-기술 도메인 진입**
+- 생성 (Source): [[sources/business-writing-30-mistakes]]
+- 생성 (Concepts): [[concepts/business-writing-clarity]] (메타 우산: 명확성=친절), [[concepts/double-passive-translationese]] (A. 이중수동/번역체), [[concepts/cushion-words-redundancy]] (B. 쿠션어/군더더기), [[concepts/vague-time-deadlines]] (C. 모호한 시간/마감), [[concepts/object-honorifics-overformality]] (E. 사물존칭/과한격식), [[concepts/action-spec-three-elements]] (F. 요청 3요소)
+- 생성 보류: D 카테고리(맞춤법) 어휘 단위 항목이라 별도 concept 미생성 — 필요 시 `concepts/korean-spelling-traps` 분리 가능
+- 갱신: `wiki/index.md` (50 → 57 페이지, +6 concepts +1 source)
+- 도메인 교차 발견: AI 코딩의 핵심 원칙(*모호함 제거 · 액션 명시 · 비대화 회피*)이 한국어 직장 글쓰기와 동일 결로 정렬됨. 기술 페이지([[concepts/code-is-not-cheap]], [[concepts/fresh-context-principle]], [[concepts/ubiquitous-language]], [[concepts/plan-mode]], [[concepts/specs-to-code-antipattern]])와 메타 공명 링크 형성.
+- 핵심 정리: *프롬프트 엔지니어링과 한국어 직장 글쓰기는 같은 기술의 두 표면* — `action-spec-three-elements` 의 (무엇/관점/마감) 구조가 AI 프롬프트의 (무엇/관점/형식/제약) 구조와 동형.
+- 미해결: 항목별 1차 출처 (국립국어원 표준국어대사전, 일제 잔재 한자어 학술 목록 등) — 후속 lint 시 보강 여지. *수고하셨습니다* 윗사람 결례 통념 vs 실제 직장 사용 현실 (페이지에 `[!note]` 로 주석 처리).
+
 ## [2026-04-28] ingest | Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6)
 - 소스: `raw/Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6) [cSkoaCCmq0w].en.vtt` (yt-dlp 영어 자동자막, 한국어 sub 부재)
 - 전처리: `raw/cskoa-transcript.txt` (중복 제거, 723 라인 / 27,753 자)
