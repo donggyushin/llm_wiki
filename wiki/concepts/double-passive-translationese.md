@@ -1,11 +1,20 @@
 ---
-title: "이중 수동·번역체 (Double Passive & Translationese)"
+title: 이중 수동·번역체 (Double Passive & Translationese)
 type: concept
-tags: [한국어, 비즈니스-커뮤니케이션, 글쓰기, 번역체]
+tags:
+  - 한국어
+  - 비즈니스-커뮤니케이션
+  - 글쓰기
+  - 번역체
 created: 2026-04-29
 updated: 2026-04-29
-sources: [business-writing-30-mistakes]
-aliases: [double-passive, translationese, 번역체, 이중수동]
+sources:
+  - business-writing-30-mistakes
+aliases:
+  - double-passive
+  - translationese
+  - 번역체
+  - 이중수동
 ---
 
 # 이중 수동·번역체
