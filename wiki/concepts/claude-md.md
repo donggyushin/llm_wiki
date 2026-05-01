@@ -3,8 +3,8 @@ title: "CLAUDE.md — 프로젝트 컨텍스트 허브"
 type: concept
 tags: [claude-code, context, configuration]
 created: 2026-04-22
-updated: 2026-04-25
-sources: [claude-code-2h-mastery, harness-engineering-era, jimcoding-claude-rules, jay-choi-9-tips]
+updated: 2026-05-01
+sources: [claude-code-2h-mastery, harness-engineering-era, jimcoding-claude-rules, jay-choi-9-tips, work-prep-2026-05-01]
 aliases: ["CLAUDE.md", "클로드 MD", "프로젝트 설정 파일", "AGENTS.md"]
 ---
 
@@ -76,6 +76,9 @@ Claude 는 작업 경로에 따라 해당 폴더의 `CLAUDE.md` 만 읽으므로
 
 Claude 는 **필요할 때만** 참조 파일을 읽는다 → [[concepts/context-engineering]].
 
+> [!note] 실무 적용 패턴
+> [[sources/work-prep-2026-05-01]] 의 본 위키 사용자 사례: *"모듈별로 CLAUDE.md 구조화. root 의 CLAUDE.md 는 최대한 간소하게. 그 외에는 다른 문서들을 참조하는 용도로 사용"*. 폴더 분할 + 참조 기반 두 패턴을 결합해 root 를 *허브* 로만 운용 — 새 직장에서 *AI 노하우 공유* 카드로 꺼낼 수 있는 일관된 운영 방식.
+
 ### 수정
 
 수동 편집 불필요. Claude 에게 `"방금 정한 패턴을 CLAUDE.md 에 추가해 줘"` 라고 말하면 자동 업데이트된다.
@@ -127,3 +130,4 @@ CLAUDE.md 안에 워크플로우를 키워드로 등록 가능:
 - [[sources/harness-engineering-era]] — Context Files 기둥으로의 재해석
 - [[sources/jimcoding-claude-rules]] — 비대화 실패 모드 + `.claude/rules` 조건부 로딩 사례
 - [[sources/jay-choi-9-tips]] — *"Claude 는 CLAUDE.md 의 80% 정도만 따른다"*, 150~200줄 권장
+- [[sources/work-prep-2026-05-01]] — 본 위키 사용자의 실무 적용 패턴: 모듈별 CLAUDE.md + root 간소화 + 참조 허브화

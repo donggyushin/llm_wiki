@@ -3,8 +3,8 @@ title: "Hooks — 이벤트 기반 자동화 엔진"
 type: concept
 tags: [claude-code, hooks, automation]
 created: 2026-04-22
-updated: 2026-04-22
-sources: [claude-code-2h-mastery, harness-engineering-era]
+updated: 2026-05-01
+sources: [claude-code-2h-mastery, harness-engineering-era, work-prep-2026-05-01]
 aliases: ["Hooks", "훅스", "PreToolUse", "PostToolUse"]
 ---
 
@@ -82,6 +82,39 @@ PreToolUse → 도구 실행 → PostToolUse → ... → Notification / Stop
 | Notification | Slack · Discord · 이메일 전송 |
 | Stop | 세션 요약, 커밋 메시지 초안 생성 |
 
+## 강제 동기화 패턴 — 코드↔문서, 코드↔테스트
+
+[[sources/work-prep-2026-05-01]] 본 위키 사용자가 명시한 두 강제 hook:
+
+### 1) Markdown writer agent + hook 으로 문서 동기화 강제
+
+**문제**: 코드는 변하는데 docs 는 안 변한다 → drift → AI 가 stale docs 를 컨텍스트로 받아 환각.
+
+**대응**: `PostToolUse` hook 으로 코드 변경 (Edit/Write) 을 감지하면 **markdown writer subagent** 를 자동 실행해 관련 문서를 업데이트.
+
+```
+Edit/Write (.ts, .py 등) → PostToolUse → markdown-writer subagent 실행 → docs/ 갱신
+```
+
+핵심: *부탁* 이 아니라 *시스템 강제*. AI 가 잊을 수 없다.
+
+### 2) TDD 강제 hook
+
+**문제**: AI 에게 "테스트도 짜줘" 를 *프롬프트로* 시키면 빠뜨린다.
+
+**대응**: 새 함수/모듈을 작성하는 도구 호출에 대해 **테스트 파일 존재 여부를 검증** 하고, 없으면 차단·재요청. 또는 코드 작성 직후 테스트 작성 subagent 자동 트리거.
+
+### 공통 원리
+
+| | 프롬프트 의존 | Hook 강제 |
+|---|---|---|
+| 신뢰도 | 80% (CLAUDE.md 수준) | 100% (시스템 검증) |
+| 망각 가능성 | 있음 | 없음 |
+| 컨텍스트 위생 | 의존적 | 독립적 |
+
+→ 위임 한계의 사고: [[concepts/what-not-to-delegate-to-ai]]
+→ 시스템 강제의 상위 사고: [[concepts/harness-engineering]]
+
 ## 주의 사항
 
 ### 훅 실행 중 Claude 는 대기
@@ -139,8 +172,11 @@ Hooks 는 [[concepts/harness-engineering|Harness Engineering]] 의 **2번째 기
 - [[concepts/claude-skills]] — 요청 기반 자동화
 - [[concepts/subagents]] — 명시적 위임 자동화
 - [[concepts/context-engineering]] — 컨텍스트 외부 자동화로 오염 방지
+- [[concepts/what-not-to-delegate-to-ai]] — *시스템 강제* 가 필요한 영역의 판단 기준
+- [[concepts/tdd]] — TDD hook 의 사고 토대
 
 ## 출처
 
 - [[sources/claude-code-2h-mastery]] — 심화편 "Hooks" 섹션 + 통합 데모
 - [[sources/harness-engineering-era]] — System Enforcement 기둥 해설
+- [[sources/work-prep-2026-05-01]] — markdown writer + TDD 강제 hook 의 본 위키 사용자 사례

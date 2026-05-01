@@ -147,3 +147,18 @@ Append-only 연대기. 각 항목은 `## [YYYY-MM-DD] <op> | <title>` 형식.
 - 갱신: `wiki/index.md` (48 → 50 페이지, +1 concept +1 source)
 - 도메인: Claude Code Opus 4.6 신기능 — 기존 sub-agent / context-engineering / claude-skills / agentic-engineering 클러스터 직접 확장. 영상 본인이 *"진짜 핵심 기능"* 으로 강조한 모드를 wiki 내 첫 시야 정합 (sub-agent 의 Agent Teams 절을 분리 페이지로 승격).
 - 미해결: 채널/저자 정확 식별 필요 (entity 미생성), Anthropic Opus 4.6 Agent Teams 공식 docs URL 미확보 (영상 내 언급), `/cost` 멀티에이전트 duration 계산 로직 (영상 본인도 의문 표시), `--dangerously-skip-permissions` 보안 권고 vs 영상 데모 갭. 후속 lint 시 교차 확인.
+
+## [2026-05-01] ingest | 출근 전 준비 — AI 코딩 입장 정리 (본인 노트)
+- 소스: `raw/Things to prepare before go to work.md` (본인 정리 personal-note, 27 라인)
+- 맥락: 새 직장 출근 전. 리드가 *"AI 관련 전문 지식·노하우 팀 내 공유"* 명시 → 첫 한 달 안에 카드를 꺼내야 하는 상황. 4개 질문 (도구 스택 / 코드베이스 구조화 / 비즈니스 임팩트 / AI 안 시키는 일) 에 대한 본인 답.
+- 생성 (Source): [[sources/work-prep-2026-05-01]]
+- 생성 (Concepts):
+  - [[concepts/what-not-to-delegate-to-ai]] — *컨텍스트 깊이* 단일 기준으로 AI 위임 금지 영역 3종 (레거시 / 조직 정치 / Production incident) 정의. 4축 확장 프레임 (검증 가능성 / 되돌리기 비용 / 컨텍스트 깊이 / 책임 소재) 도 함께 박음. 면접·팀 공유용 한 줄 답변 2종 포함.
+  - [[concepts/claude-squad]] — tmux + worktree 결합 패턴. Anthropic 공식 [[concepts/agent-teams]] 와의 격리 강도·통합 주체 비교 표. *명칭 충돌* 주의 박스로 혼동 방지.
+- 갱신 (Concepts):
+  - [[concepts/claude-md]] — *실무 적용 패턴* 박스 추가 (root 간소화 + 참조 허브화). sources frontmatter + 출처 갱신.
+  - [[concepts/hooks]] — *강제 동기화 패턴* 신규 섹션 (markdown writer agent + TDD hook 두 사례). [[concepts/what-not-to-delegate-to-ai]] · [[concepts/tdd]] 관련 페이지 링크 추가.
+  - [[concepts/context-engineering]] — MCP 다이어트 섹션에 *직접 구축 우선* 박스 추가 (script 대체 운영 원칙).
+- 갱신: `wiki/index.md` (57 → 60 페이지, +2 concepts +1 source). 기존 60 표기.
+- 도메인 교차 발견: 4개 질문 답이 한 줄로 묶임 — *"AI 의 신뢰 영역과 사람의 신뢰 영역을 명확히 분리"*. 본인의 hook 운영 / MCP 다이어트 / TDD 강제 / `CLAUDE.md` 분할이 모두 [[concepts/harness-engineering]] 의 *시스템 강제* 사고 위에 정렬됨. 면접에서 *추상 원칙* 보다 *왜 이 hook 들이 있는지* 설명이 시니어 시그널.
+- 미해결: 본인 entity 페이지 미생성 (위키 주체이자 personal-note 작성자). 향후 면접·이력 정리 시 entity 신설 여지. *Claude Squad* 의 공식 도구·저장소 URL 미확정 (현재는 *패턴/관행* 기술). 4축 중 컨텍스트 깊이 외 3축 (검증 가능성 · 되돌리기 비용 · 책임 소재) 은 [[concepts/what-not-to-delegate-to-ai]] 안에 표로만 박음 — 후속 분리 가능.
